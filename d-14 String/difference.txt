@@ -1,0 +1,16 @@
+the difference of using char ch[]="code" and char[]={'c','o','d','e'};
+
+ char ch[] = "code";
+- Creates a null-terminated string (i.e. it automatically adds '\0' at the end).
+- Length of the array becomes 5 ('c', 'o', 'd', 'e', '\0').
+- Can be used directly with string functions like strlen() and safely printed with cout << ch;.
+🔍 char ch[] = {'c', 'o', 'd', 'e'};
+- Just a character array, not a C-style string.
+- Length is exactly 4—no null terminator.
+- If you try cout << ch;, it may print garbage after 'e', since there's no '\0' to mark the end.
+- Useful when you’re working with raw character data rather than string manipulation.
+⚠️ Summary Comparison
+| Syntax | Null-Terminated? | Array Size | Safe for cout or string ops? | 
+| char ch[] = "code"; | ✅ Yes ('\0') | 5 | ✅ Yes | 
+| char ch[] = {'c', 'o', 'd', 'e'}; | ❌ No | 4 | ❌ No (unsafe) | 
+
