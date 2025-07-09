@@ -31,5 +31,10 @@ int main(){
 
 cout<<str.find("cpp")<<endl;    //gives thr first ocuurence index of word u give
 
+string s1="cake";
+string s2="bake";
+
+cout<<(s1==s2) <<endl;
+cout<<(s1<s2) <<endl;
 
 }
