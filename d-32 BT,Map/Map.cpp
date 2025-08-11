@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// in map key should unique and value can repeat
+// Note - in map key should unique and value can repeat
 
 int main()
 {
