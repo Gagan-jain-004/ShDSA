@@ -13,6 +13,13 @@ int main(){
     sort(A.begin(),A.end());
     sort(B.begin(),B.end());
 
-   vector<pair<int,int>>
+    int absDiff=0;
+
+    for(int i=0;i<A.size();i++){
+        absDiff += abs(A[i] - B[i]);
+    }
+
+    cout<<"MIN abs diff = "<<absDiff<<endl;
+    
     return 0;
 }

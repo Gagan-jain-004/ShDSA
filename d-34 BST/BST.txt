@@ -1,0 +1,6 @@
+BST condition - 
+ left mai Node sai small and right mai node sai bigger
+
+
+#Note -   Inorder  of BST  is always comes in a sorted order
+

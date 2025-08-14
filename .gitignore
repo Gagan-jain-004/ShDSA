@@ -1,3 +1,4 @@
 *.exe
 template.cpp
+note.cpp
 .vscode/*
