@@ -56,3 +56,65 @@ int main(){
     print(arr,n);
     return 0;
 }
+
+
+
+
+
+
+
+
+// call stack
+
+/*
+mergesort(0,5)
+ ├─ mergesort(0,2)
+ │   ├─ mergesort(0,1)
+ │   │   ├─ mergesort(0,0) → return
+ │   │   ├─ mergesort(1,1) → return
+ │   │   └─ merge(0,0,1) → {3,6}
+ │   ├─ mergesort(2,2) → return
+ │   └─ merge(0,1,2) → {3,6,7}
+ ├─ mergesort(3,5)
+ │   ├─ mergesort(3,4)
+ │   │   ├─ mergesort(3,3) → return
+ │   │   ├─ mergesort(4,4) → return
+ │   │   └─ merge(3,3,4) → {2,5}
+ │   ├─ mergesort(5,5) → return
+ │   └─ merge(3,4,5) → {2,4,5}
+ └─ merge(0,2,5) → {2,3,4,5,6,7}
+
+
+
+How the merge() function works here
+
+Take final merge example:
+
+Left = {3, 6, 7}, Right = {2, 4, 5}
+
+
+i points to Left[0] = 3
+
+j points to Right[0] = 2
+
+Compare: 2 < 3 → push 2
+
+Now:
+
+temp = {2}, i=0, j=1
+
+
+Compare 3 vs 4 → push 3
+
+Compare 6 vs 4 → push 4
+
+Compare 6 vs 5 → push 5
+
+Leftover elements {6,7} → append them
+
+So temp = {2,3,4,5,6,7} → copied back into original array.
+
+✅ Final Answer:
+Sorted Array = {2, 3, 4, 5, 6, 7}
+
+*/
