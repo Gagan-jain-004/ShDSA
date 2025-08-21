@@ -1,0 +1,23 @@
+HASH TABLE - stores key value pair 
+key should unique
+
+unordered datastructur(key,value)
+useful for    storing unordered data 
+
+insert Operation   //O(1) avg case
+Search Operation   //O(1) avg case
+Remove Operation   //O(1) avg case
+
+
+
+
+Hashing is to convert one type of data to another type 
+
+// collision hone par LL mai add krte jao next node 
+
+
+
+
+// just like priorityqueur based on implementation of heap(under the hood) same here 
+// unordered maps and sets are under the hood hashtable works
+
