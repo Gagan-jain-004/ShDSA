@@ -1,0 +1,3 @@
+// Tries used for string based qsn having pattern matching or prefix qsn
+// eg- for their and there   common part(prefix i.e 'the' here )  stores once to used by both
+// Tries is a generic tree , we make to be remain empty
