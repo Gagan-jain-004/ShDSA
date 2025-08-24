@@ -1,5 +1,3 @@
-// approach    first initialize a vector of visted name with false for all
-// first push strt node to queue then pop it then push its neighbour and mark visited true then pop front print and then its neighbour ans so on till q get empty
 
 
 
@@ -35,28 +33,50 @@ class Graph{
             }
         }
 
-        void bfs(){                      //TC =  O(V+E)    vertex+edge
-            queue<int>q;
-            vector<bool>vis(V,false);             // size of V and initialize with false
-            q.push(0);
-            vis[0]=true;
+      
+        
+        void dfsHelper(int u,vector<bool>&vis){  // O(V+E)
+            vis[u]=true;
+            cout<<u<<" ";
 
-            while(q.size()>0){
-                int u = q.front();
-                q.pop();
-                cout<<u<<" ";
+            list<int> neighbors = l[u];
+            for(int v: neighbors){
+                if(!vis[v]){
+                    dfsHelper(v,vis);
+                }
+            }
+        }
 
-                list<int>neighbors = l[u];
-                for(int v: neighbors){
-                    if(!vis[v]){
-                        vis[v]=true;
-                        q.push(v);
+        void dfs(){
+                 vector<bool>vis(7,false);
+                 dfsHelper(0,vis);
+                 cout<<endl;
+        }
+
+
+        bool pathHelper(int src,int dest,vector<bool>&vis){       //O(V+E)
+
+            if(src == dest)   return true;
+
+            vis[src] = true;
+            list<int>neighbors= l[src];
+
+            for(int v: neighbors){
+                if(!vis[v]){
+                    if(pathHelper(v,dest,vis)){
+                        return true;
                     }
                 }
             }
 
-            cout<<endl;
+            return false;
         }
+
+        bool hasPath(int src,int dest){
+            vector<bool>vis(V,false);
+            return pathHelper(src,dest,vis);
+        }
+
 
 };
 
@@ -73,8 +93,8 @@ int main() {
     graph.addEdge(4,5);
     graph.addEdge(5,6);
 
-
-    graph.bfs();
+   
+   cout<<graph.hasPath(0,5)<<endl;    // 0 is src and 5 is dest
 
     return 0;
 }

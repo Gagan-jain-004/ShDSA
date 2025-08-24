@@ -1,6 +1,3 @@
-// approach    first initialize a vector of visted name with false for all
-// first push strt node to queue then pop it then push its neighbour and mark visited true then pop front print and then its neighbour ans so on till q get empty
-
 
 
 #include <bits/stdc++.h>
@@ -35,27 +32,25 @@ class Graph{
             }
         }
 
-        void bfs(){                      //TC =  O(V+E)    vertex+edge
-            queue<int>q;
-            vector<bool>vis(V,false);             // size of V and initialize with false
-            q.push(0);
-            vis[0]=true;
+        
+        
 
-            while(q.size()>0){
-                int u = q.front();
-                q.pop();
-                cout<<u<<" ";
+        void dfsHelper(int u,vector<bool>&vis){  // O(V+E)
+            vis[u]=true;
+            cout<<u<<" ";
 
-                list<int>neighbors = l[u];
-                for(int v: neighbors){
-                    if(!vis[v]){
-                        vis[v]=true;
-                        q.push(v);
-                    }
+            list<int> neighbors = l[u];
+            for(int v: neighbors){
+                if(!vis[v]){
+                    dfsHelper(v,vis);
                 }
             }
+        }
 
-            cout<<endl;
+        void dfs(){
+                 vector<bool>vis(7,false);
+                 dfsHelper(0,vis);
+                 cout<<endl;
         }
 
 };
@@ -73,8 +68,8 @@ int main() {
     graph.addEdge(4,5);
     graph.addEdge(5,6);
 
-
-    graph.bfs();
+   
+    graph.dfs();
 
     return 0;
 }
