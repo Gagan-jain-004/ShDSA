@@ -1,5 +1,5 @@
 // finding sum of binary bits of num eg)for n=10;  the binary = 1010  then sum = 1+0+1+0 = 2 
-//approach get last binary bit of num then sum , then right shift . repeat both steps till num>0
+//approach - get last binary bit of num then sum , then right shift . repeat both steps till num>0
 
 
 #include<iostream>
