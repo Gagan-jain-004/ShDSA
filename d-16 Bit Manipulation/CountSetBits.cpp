@@ -20,7 +20,7 @@ int countSetBits(int num){
 
 
 
-void fastexpo(int x,int n){
+void fastexpo(int x,int n){            // to find x ki power n in log(n)complexity as normal approach is of O(n) like for n=3 (3*3*3*3*3*3...) so we use bit manipulation for it 
     int ans=1;
     while (n>0)
     {
