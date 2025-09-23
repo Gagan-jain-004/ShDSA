@@ -34,7 +34,7 @@ for(auto el: s){
 
 set<int>st;
 
-st.insert(1);
+st.insert(1);                 // O(log n) per insert so for insert in loop of n  then tc = nlogn
 st.insert(5);
 st.insert(3);
 st.insert(2);
