@@ -30,7 +30,7 @@ void printIntersection(vector<int>arr1,vector<int>arr2){
     }
 
     for(int el:arr2){
-        if(s.find(el) !=s.end()) { // found
+        if(s.find(el) !=s.end()) { // found    ,, this loop search el till end of set s
             cout<<el<<" ";
         }
     }
