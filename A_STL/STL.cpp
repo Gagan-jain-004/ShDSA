@@ -184,9 +184,9 @@ using namespace std;
 int main(){
     queue<string> q;
     q.push("hu ");
+    q.push("rta");
     q.push(" kya ");
     q.push("nam ");
-    q.push("rta");
 
 cout<<"Size before pop "<<q.size()<<endl;
 cout<<"FIrst element is "<<q.front()<<endl;
