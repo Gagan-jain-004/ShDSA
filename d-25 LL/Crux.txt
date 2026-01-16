@@ -1,0 +1,2 @@
+## linked list mai jahhan dikhe wahaan 
+slow fast pointer sai khelo
